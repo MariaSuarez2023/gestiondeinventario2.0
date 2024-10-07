@@ -100,4 +100,19 @@ router.put('/update/:id', auth, async (req, res) => {
   }
 });
 
+router.delete('/delete/:id', auth, auth.isAdmin, async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ msg: 'Usuario no encontrado' });
+    }
+
+    await User.findByIdAndDelete(req.params.id);
+    res.json({ msg: 'Usuario eliminado exitosamente' });
+  } catch (err) {
+    console.error('Error al eliminar el usuario:', err.message);
+    res.status(500).send('Error en el servidor');
+  }
+});
+
 module.exports = router;
