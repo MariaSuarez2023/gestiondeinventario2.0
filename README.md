@@ -1,67 +1,78 @@
-# Marishop - Plataforma de Gestión de Inventarios
+# Plataforma de Gestión de Ventas y Productos
 
-**Marishop** es una solución completa para la gestión de inventarios, construida con **Node.js**, **Express**, y **MongoDB**. Esta plataforma facilita la organización eficiente de productos, la autenticación segura de usuarios, y el manejo de imágenes. Su interfaz es totalmente adaptable y está diseñada para brindar una experiencia óptima en dispositivos móviles, utilizando **TailwindCSS**.
+Este repositorio contiene el código fuente de una plataforma web diseñada para gestionar productos, ventas y usuarios. La aplicación está construida utilizando Node.js, Express.js, MongoDB, y Tailwind CSS, y está pensada para servir tanto a vendedores como a compradores, ofreciendo una experiencia de usuario intuitiva y segura.
 
+## Características Principales
 
-VIDEO EXPLICATIVO EN YOUTUBE: https://youtu.be/WPLsLgbU1cU 
-INFORME DEL TRABAJO: https://drive.google.com/file/d/1G6N_1QfsaIFnda-7LbMdBB1te6dCGpdR/view?usp=sharing
+- **Gestión de Inventarios:** Permite a los vendedores agregar, editar y eliminar productos con facilidad.
+- **Sistema de Autenticación:** Autenticación segura mediante JSON Web Tokens (JWT) y roles específicos para compradores, vendedores y administradores.
+- **Interfaz Intuitiva:** Uso de Tailwind CSS para una experiencia de usuario fluida y responsiva.
+- **Favoritos y Compras:** Los compradores pueden agregar productos a favoritos y realizar compras fácilmente.
+- **Análisis de Ventas:** Estadísticas detalladas para vendedores, incluyendo productos más vendidos y clientes únicos.
 
-## Principales Funcionalidades
+## Tecnologías Utilizadas
 
-- **Control de Productos**: Posibilidad de añadir, actualizar y eliminar productos junto con sus imágenes.
-- **Autenticación Segura**: Implementación de **JWT** y **bcryptjs** para asegurar la protección de la información del usuario.
-- **Manejo de Archivos**: Uso de **multer** para cargar y gestionar imágenes de los productos.
-- **Interfaz Adaptativa**: Diseño responsivo con **TailwindCSS**, optimizado para smartphones y tabletas.
-- **Base de Datos NoSQL**: Almacenamiento eficiente de datos utilizando **MongoDB** y **Mongoose**.
-
-## Requisitos Previos
-
-Antes de comenzar a utilizar **Marishop**, asegúrate de tener las siguientes herramientas instaladas en tu sistema:
-
-- **Node.js** (versión 14 o superior)
-- **MongoDB** (versión 4.0 o superior)
+- **Backend:** Node.js, Express.js, MongoDB
+- **Frontend:** HTML5, Tailwind CSS, JavaScript
+- **Autenticación y Seguridad:** JSON Web Tokens (JWT), bcrypt.js
+- **Cargas de Archivos:** multer para la gestión de imágenes
 
 ## Instalación
 
-Para comenzar, clona el repositorio de Marishop:
+Sigue los siguientes pasos para instalar y configurar el proyecto en tu máquina local:
 
-`git clone https://github.com/usuario/marishop`
+1. Clona el repositorio:
+   
+   git clone [URL_DEL_REPOSITORIO]
 
-Dirígete a la carpeta del proyecto:
+2. Navega al directorio del proyecto:
+   
+   cd [NOMBRE_DEL_DIRECTORIO]
 
-`cd marishop`
+3. Instala las dependencias necesarias:
+   
+   npm install
 
-Instala las dependencias necesarias con el siguiente comando:
+4. Configura las variables de entorno creando un archivo `.env` en la raíz del proyecto con el siguiente contenido:
+   
+   PORT=3000
+   MONGODB_URI=mongodb://localhost:27017/nombreDeTuBaseDeDatos
+   JWT_SECRET=tuClaveSecreta
 
-`npm install`
+5. Inicia el servidor:
+   
+   npm start
 
-Compila los estilos con **TailwindCSS**:
+6. Abre tu navegador web y accede a la aplicación en http://localhost:3000.
 
-`npm run build:css`
+## Estructura del Proyecto
+
+- **models/**: Contiene los esquemas de datos para usuarios, productos, favoritos y compras.
+- **routes/**: Define las rutas de la API y los controladores para manejar las solicitudes.
+- **middleware/**: Contiene funciones de autenticación y autorización.
+- **uploads/**: Almacena las imágenes de los productos cargados.
+- **public/**: Archivos estáticos accesibles para el frontend.
 
 ## Uso
 
-Para ejecutar el servidor, utiliza el siguiente comando:
+### Registro e Inicio de Sesión
+- Los usuarios pueden registrarse como compradores, vendedores o administradores.
+- Autenticación segura mediante JWT para proteger las rutas de la aplicación.
 
-`node app.js`
+### Gestión de Productos (Para Vendedores)
+- Los vendedores pueden agregar nuevos productos, editar detalles existentes y gestionar su inventario a través del panel de control.
 
-Una vez iniciado, la aplicación estará disponible en **http://localhost:3000**.
+### Favoritos y Compras (Para Compradores)
+- Los compradores pueden añadir productos a sus favoritos y proceder a la compra de manera sencilla.
 
-Accede a la aplicación y visualiza su funcionamiento en tu editor de código preferido como **Visual Studio Code**.
+### Estadísticas y Análisis de Ventas (Para Vendedores)
+- Los vendedores tienen acceso a estadísticas detalladas que les permiten analizar el rendimiento de sus ventas.
 
-## Comandos Disponibles
+## Contribuciones
 
-- `npm run build:css`: Compila los estilos con **TailwindCSS**.
-- `npm start`: Ejecuta la aplicación en modo producción.
+Las contribuciones son bienvenidas. Siéntete libre de abrir un issue o enviar un pull request con mejoras y correcciones. Por favor, asegúrate de seguir las mejores prácticas y proporcionar una descripción clara de los cambios que realizas.
 
-## Principales Dependencias
+## Problemas y Soluciones Comunes
 
-- **Express**: Framework web rápido para Node.js.
-- **MongoDB**: Base de datos NoSQL para gestionar la información.
-- **Mongoose**: Herramienta para interactuar con MongoDB.
-- **JWT**: Sistema de autenticación con **JSON Web Tokens**.
-- **Bcryptjs**: Para el cifrado de contraseñas.
-- **Multer**: Gestión de archivos para cargar imágenes.
-- **TailwindCSS**: Framework CSS para diseños adaptativos.
-
-Este sistema ofrece todo lo necesario para gestionar eficientemente tu inventario, asegurando seguridad y una experiencia de usuario intuitiva.
+- **Problema de Conexión con MongoDB:** Verifica que el URI de la base de datos esté configurado correctamente en el archivo `.env`.
+- **Errores de Autenticación:** Asegúrate de que el JWT_SECRET esté configurado correctamente y que los tokens no estén expirados.
