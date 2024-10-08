@@ -41,7 +41,7 @@ Sigue los siguientes pasos para instalar y configurar el proyecto en tu máquina
 
 5. Inicia el servidor:
    
-   npm start
+   node app.js
 
 6. Abre tu navegador web y accede a la aplicación en http://localhost:3000.
 
