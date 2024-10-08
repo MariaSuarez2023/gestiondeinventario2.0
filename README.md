@@ -2,6 +2,15 @@
 
 Este repositorio contiene el código fuente de una plataforma web diseñada para gestionar productos, ventas y usuarios. La aplicación está construida utilizando Node.js, Express.js, MongoDB, y Tailwind CSS, y está pensada para servir tanto a vendedores como a compradores, ofreciendo una experiencia de usuario intuitiva y segura.
 
+## Video:
+
+## Informe:
+https://drive.google.com/file/d/1Bxl6KWTiHNvX36I6K-wsG3qnEr7jcT5M/view?usp=sharing
+
+## Figma
+https://www.figma.com/design/JUtB1k4HYJJwgqc5CDFh9Q/Wireframes?node-id=2-41&t=QWgkL0m53NVz8idT-1 
+
+
 ## Características Principales
 
 - **Gestión de Inventarios:** Permite a los vendedores agregar, editar y eliminar productos con facilidad.
